@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Code Patterns Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 900px;
+        }
+        h1, h2 {
+            color: #17a2b8; /* Changed color */
+            border-bottom: 2px solid #17a2b8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background-color: #e9ecef;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            white-space: pre-wrap;
+        }
+        .concept-card {
+            border-left: 5px solid #20c997; /* Changed color */
+            padding: 15px;
+            background-color: #e6fcf5;
+            margin-bottom: 15px;
+        }
+        .text-info-custom {
+            color: #6c757d;
+        }
+        .pattern-output {
+            background-color: #343a40;
+            color: #20c997;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            white-space: pre;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center mb-5">
+            <h1 class="display-4">C++ Patterns using Nested Loops ⭐</h1>
+            <p class="lead text-info-custom">Structuring code for visual output patterns (Stars, Numbers).</p>
+        </header>
+
+        <section id="introduction" class="mb-5">
+            <h2 class="mb-3">What are Code Patterns?</h2>
+            <div class="concept-card">
+                <p>In introductory C++ programming, **patterns** refer to the visual arrangement of characters (like `*`, `#`, or numbers) printed to the console in specific shapes (e.g., triangles, squares, diamonds).</p>
+                <p>These exercises are primarily used to master the concept of **nested loops**.</p>
+            </div>
+        </section>
+
+        <section id="nested-loops" class="mb-5">
+            <h2 class="mb-3">The Role of Nested Loops</h2>
+            <p>A pattern is generally created using a loop inside another loop:</p>
+            <ul>
+                <li>The **Outer Loop** controls the **number of rows** (line breaks).</li>
+                <li>The **Inner Loop** controls the **number of columns** (what is printed on a single line).</li>
+            </ul>
+            <div class="code-block">
+                <pre>for (int row = 1; row <= N; row++) { // Controls rows
+    for (int col = 1; col <= row; col++) { // Controls columns/content
+        // Print character or number
+    }
+    cout << endl; // Move to the next row
+}</pre>
+            </div>
+        </section>
+
+        <section id="example" class="mb-5">
+            <h2 class="mb-3">Example: Right Triangle Star Pattern</h2>
+            <p>This code prints a right-angle triangle of stars where the number of stars in each row equals the row number.</p>
+            <div class="code-block">
+                <pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n = 5;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}</pre>
+            </div>
+            <h4 class="mt-4">Resulting Output (for $n=5$):</h4>
+            <div class="pattern-output">
+* * * * * * * * * * * * * * * </div>
+        </section>
+
+        <section id="key-concepts" class="mb-5">
+            <h2 class="mb-3">Key Concepts in Pattern Logic</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Changing Content</h5>
+                            <p class="card-text">To print numbers instead of stars, replace `"* "` with the inner loop variable (`j`) or the outer loop variable (`i`).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Spacing Logic</h5>
+                            <p class="card-text">To create inverted or centered patterns, an additional inner loop is often required to print spaces *before* the main content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Mirai Learning. All rights reserved.</p>
+        </div>
+</footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Fundamentals Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 900px;
+        }
+        h1, h2 {
+            color: #6f42c1; /* CSS-inspired color (purple) */
+            border-bottom: 2px solid #6f42c1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background-color: #e6e6fa; /* Light lavender for code */
+            border: 1px solid #6f42c1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            white-space: pre-wrap;
+        }
+        .concept-card {
+            border-left: 5px solid #17a2b8;
+            padding: 15px;
+            background-color: #e8f9fb;
+            margin-bottom: 15px;
+        }
+        .text-info-custom {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center mb-5">
+            <h1 class="display-4">CSS Fundamentals 🎨</h1>
+            <p class="lead text-info-custom">Styling and presentation of web content.</p>
+        </header>
+
+        <section id="basics" class="mb-5">
+            <h2 class="mb-3">What is CSS?</h2>
+            <div class="concept-card">
+                <p>CSS stands for **Cascading Style Sheets**. It is the language used to describe the **presentation** of a document written in HTML. This includes colors, layout, fonts, and responsive design.</p>
+                <p>It cleanly **separates content (HTML) from presentation (CSS)**.</p>
+            </div>
+        </section>
+
+        <section id="syntax" class="mb-5">
+            <h2 class="mb-3">CSS Syntax</h2>
+            <p>A CSS rule consists of a **selector** and one or more **declarations** inside curly braces.</p>
+            <div class="code-block">
+                <pre>selector {
+    property: value;
+    property-two: value-two;
+}</pre>
+            </div>
+            <ul>
+                <li>**Selector**: Points to the HTML element(s) you want to style.</li>
+                <li>**Declaration**: A `property` and a `value`, separated by a colon, and ended with a semicolon.</li>
+            </ul>
+        </section>
+
+        <section id="selectors" class="mb-5">
+            <h2 class="mb-3">Primary Selectors</h2>
+            <p>Selectors determine which HTML element(s) the style rule applies to:</p>
+            <table class="table table-bordered table-striped">
+                <thead class="table-info">
+                    <tr>
+                        <th>Selector Type</th>
+                        <th>Example</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>**Element (Type)**</td>
+                        <td>`p`</td>
+                        <td>Selects **all** <code>&lt;p&gt;</code> tags.</td>
+                    </tr>
+                    <tr>
+                        <td>**Class**</td>
+                        <td>`.my-style`</td>
+                        <td>Selects all elements with `class="my-style"`.</td>
+                    </tr>
+                    <tr>
+                        <td>**ID**</td>
+                        <td>`#main-header`</td>
+                        <td>Selects the **single** element with `id="main-header"`.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="box-model" class="mb-5">
+            <h2 class="mb-3">The CSS Box Model</h2>
+            <div class="concept-card bg-light">
+                <p>Every HTML element is treated as a rectangular box. The **Box Model** describes the space taken up by these boxes, from inside out:</p>
+            </div>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">**Content**: The actual text, image, or content.</li>
+                <li class="list-group-item">**Padding**: Clear space around the content, *inside* the border.</li>
+                <li class="list-group-item">**Border**: A line that surrounds the padding and content.</li>
+                <li class="list-group-item">**Margin**: Clear space outside the border, separating the element from others.</li>
+            </ol>
+            <div class="code-block mt-3">
+                <pre>p {
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}</pre>
+            </div>
+        </section>
+
+        <section id="cascading" class="mb-5">
+            <h2 class="mb-3">Understanding Cascading</h2>
+            <p class="alert alert-warning">
+                The **Cascading** part means that styles flow down and can be overwritten. When multiple rules apply to the same element, the one with the highest **Specificity** (ID > Class > Element) or the one that appears **later** in the stylesheet usually wins.
+            </p>
+        </section>
+
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Mirai Learning. All rights reserved.</p>
+        </div>
+</footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
